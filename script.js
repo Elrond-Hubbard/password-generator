@@ -26,9 +26,9 @@ console.log(upperCase);
 console.log(number);
 console.log(special);
 
-//Empty Arrays for Concatenated Array and Generated Password
+//Empty Arrays for Concat Array and Generated Password
 var concatArray = [];
-var generatePassword = []
+var generatePassword = [];
 
 //User Options
 var hasLower = true;
@@ -37,7 +37,7 @@ var hasNumber = true;
 var hasSpecial = true;
 var passwordLength = 8;
 
-//Push selected characters to Concatenated Array
+//Push selected characters to Concat Array based on User Options
 function hasOption(x, y) {
   if (x) {
     concatArray.push(...y);
@@ -49,3 +49,10 @@ hasOption(hasNumber, number);
 hasOption(hasSpecial, special);
 
 console.log(concatArray);
+
+//Populate Password Array with random Concat Array indicies
+for (i = 0; i < passwordLength; i++) {
+  generatePassword.push(concatArray[Math.floor(Math.random() * concatArray.length)]);
+}
+
+console.log(generatePassword);
