@@ -26,8 +26,8 @@ console.log(upperCase);
 console.log(number);
 console.log(special);
 
-//Empty Arrays for Concatenated Array and Generated String
-var passwordArray = [];
+//Empty Arrays for Concatenated Array and Generated Password
+var concatArray = [];
 var generatePassword = []
 
 //User Options
@@ -36,3 +36,16 @@ var hasUpper = true;
 var hasNumber = true;
 var hasSpecial = true;
 var passwordLength = 8;
+
+//Push selected characters to Concatenated Array
+function hasOption(x, y) {
+  if (x) {
+    concatArray.push(...y);
+  }
+}
+hasOption(hasLower, lowerCase);
+hasOption(hasUpper, upperCase);
+hasOption(hasNumber, number);
+hasOption(hasSpecial, special);
+
+console.log(concatArray);
