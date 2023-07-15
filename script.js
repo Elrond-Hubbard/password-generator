@@ -25,3 +25,8 @@ console.log(lowerCase);
 console.log(upperCase);
 console.log(number);
 console.log(special);
+
+//Empty Arrays for Concatenated Array and Generated String
+var passwordArray = [];
+var generatePassword = []
+
