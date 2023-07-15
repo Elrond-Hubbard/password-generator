@@ -30,3 +30,9 @@ console.log(special);
 var passwordArray = [];
 var generatePassword = []
 
+//User Options
+var hasLower = true;
+var hasUpper = true;
+var hasNumber = true;
+var hasSpecial = true;
+var passwordLength = 8;
