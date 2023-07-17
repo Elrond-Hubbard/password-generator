@@ -7,8 +7,8 @@
 // Source Arrays
 var lowerCase = ["a", "b", "c"];
 var upperCase = ["A", "B", "C"];
-var number =    ["1", "2", "3"];
-var special =   ["!", "@", "#"];
+var number = ["1", "2", "3"];
+var special = ["!", "@", "#"];
 
 
 // Concatenated Array and New Password Array
@@ -17,11 +17,11 @@ var newPassword = [];
 
 
 // User Options
-var hasLower =     true;
-var hasUpper =     true;
-var hasNumber =    true;
-var hasSpecial =   true;
-var passwordLength =  8;
+var hasLower = true;
+var hasUpper = true;
+var hasNumber = true;
+var hasSpecial = true;
+var passwordLength = 8;
 
 
 // Push selected characters to Concat Array based on User Options
@@ -49,24 +49,28 @@ function generatePassword() {
 ///// INTERFACE /////
 
 
+// Validate Checkbox Input
+function getCheck() {
+  var checkBox = document.querySelector("#lowerbox");
+  if (checkBox.checked) {
+    console.log("lowercase true");
+    return true;
+  }
+  else {
+    console.log("lowercase false");
+    return false;
+  }
+}
+
 // Write password to the #password input
 function writePassword() {
   generatePassword();
   var password = newPassword.join("");
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-  // Empty array for subsequent use
+  console.log(password);
   newPassword.length = 0;
 }
-
-
-// Validate Checkbox Input
-
-
-
-//Password Length Input
-
-
 
 // Add event listener to generate button
 var generateBtn = document.querySelector("#generate");
@@ -76,4 +80,3 @@ generateBtn.addEventListener("click", writePassword);
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///// CONSOLE /////
-

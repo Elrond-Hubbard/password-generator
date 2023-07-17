@@ -33,24 +33,29 @@
         <div id="options">
 
           <div id="box">
-            <input type="checkbox" id="lowerbox" checked>
+            <input type="checkbox" id="lowerbox" onclick="getCheck()" checked>
             <label for="lowerbox">Lowercase</label>
           </div>
+          
+          <div id="box">
+            <input type="checkbox" id="upperbox" checked>
+            <label for="upperbox">Uppercase</label>
+          </div>
+          
+          <div id="box">
+            <input type="checkbox" id="numberbox" checked>
+            <label for="numberbox">Numbers</label>
+          </div>
+          
+          <div id="box">
+            <input type="checkbox" id="specialbox" checked>
+            <label for="specialbox">Special</label>
+          </div>
 
-            <div id="box">
-              <input type="checkbox" id="upperbox" checked>
-              <label for="upperbox">Uppercase</label>
-            </div>
-
-              <div id="box">
-                <input type="checkbox" id="numberbox" checked>
-                <label for="numberbox">Numbers</label>
-              </div>
-
-                <div id="box">
-                  <input type="checkbox" id="specialbox" checked>
-                  <label for="specialbox">Special</label>
-                </div>
+          <div id="slider">
+            <input type="range" id="pLength" min="8" max="128" value="8"/>
+            
+          </div>
 
         </div>
         <!--  -->
