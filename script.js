@@ -7,8 +7,8 @@
 // Source Arrays
 var lowerCase = ["a", "b", "c"];
 var upperCase = ["A", "B", "C"];
-var number = ["1", "2", "3"];
-var special = ["!", "@", "#"];
+var number =    ["1", "2", "3"];
+var special =   ["!", "@", "#"];
 
 
 // Concatenated Array and New Password Array
@@ -16,33 +16,15 @@ var concatArray = [];
 var newPassword = [];
 
 
-// User Options
-var hasLower = true;
-var hasUpper = true;
-var hasNumber = true;
-var hasSpecial = true;
-var passwordLength = 28;
+// Checkbox & Slider Options
+var hasLower =    true;
+var hasUpper =    true;
+var hasNumber =   true;
+var hasSpecial =  true;
+var passwordLength = 8;
 
 
-// This function will push selected characters to Concat Array based on User Options
-function hasOption(x, y) {
-  if (x) {
-    concatArray.push(...y);
-  }
-}
-
-
-// This loop will populate New Password Array with 
-// random Concat Array indices.
-function generatePassword() {
-  for (i = 0; i < passwordLength; i++) {
-    newPassword.push(concatArray[Math.floor(Math.random() * concatArray.length)]);
-  }
-}
-
-
-// This function will be invoked by the generator to
-// return the status of each checkbox.
+// Return the status of each checkbox.
 function getCheck(x) {
   var checkBox = document.querySelector(x);
   if (checkBox.checked) {
@@ -53,7 +35,39 @@ function getCheck(x) {
   }
 }
 
-// Write password to the #password input
+
+// Return the value of the range slider.
+var range = document.querySelector("#range");
+var rangeLabel = document.querySelector("#rangeLabel");
+range.addEventListener("input", updateRange)
+function updateRange() {
+  rangeLabel.innerHTML = range.value;
+}
+
+
+// Push selected checkbox options to Concat Array.
+function hasOption(x, y) {
+  if (x) {
+    concatArray.push(...y);
+  }
+}
+
+
+// Populate New Password Array with 
+// random Concat Array indices.
+function generatePassword() {
+  for (i = 0; i < passwordLength; i++) {
+    newPassword.push(concatArray[Math.floor(Math.random() * concatArray.length)]);
+  }
+}
+
+// This is the main password generation function.
+// First concatArray is emptied so it can be repopulated.
+// getCheck is called four times for each checkbox input.
+// hasOption is called to populate concatArray based on getCheck returns.
+// Password length is set using slider value.
+// The password is then generated and joined into a string.
+// Finally, newPassword is emptied so it can be repopulated.
 function writePassword() {
   concatArray.length = 0;
   hasLower = getCheck("#lowerbox");
@@ -64,6 +78,7 @@ function writePassword() {
   hasOption(hasUpper, upperCase);
   hasOption(hasNumber, number);
   hasOption(hasSpecial, special);
+  passwordLength = range.value;
   generatePassword();
   var password = newPassword.join("");
   var passwordText = document.querySelector("#password");
