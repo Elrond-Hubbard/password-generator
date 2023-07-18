@@ -5,10 +5,10 @@
 
 
 // Source Arrays
-var lowerCase = ["a", "b", "c"];
-var upperCase = ["A", "B", "C"];
-var number =    ["1", "2", "3"];
-var special =   ["!", "@", "#"];
+var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
+var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+var number =    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+var special =   ["!", "@", "#", "$", "%", "^", "&", "*", "_", "+"];
 
 
 // Concatenated Array and New Password Array
