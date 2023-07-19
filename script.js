@@ -10,8 +10,6 @@ const upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
 const number =    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 const special =   ["!", "@", "#", "$", "%", "^", "&", "*", "_", "+"];
 
-const newPassword = []; // newPassword will contain the final generated password.
-
 
 // Return the status of each checkbox option.
 function getCheck(optionBox) {
@@ -53,25 +51,30 @@ function generatePassword() {
 
 // This is the main password generation function.
 function writePassword() {
+  
   // concatArray will hold all selected Source Arrays for the password.
   concatArray = []; 
+  
   // getCheck is called to define checkbox states.
   hasLower = getCheck("#lowerbox"); 
   hasUpper = getCheck("#upperbox");
   hasNumber = getCheck("#numberbox");
   hasSpecial = getCheck("#specialbox");
+  
   // concatPush is called to populate concatArray based on getCheck returns.
   concatPush(hasLower, lowerCase);
   concatPush(hasUpper, upperCase);
   concatPush(hasNumber, number);
   concatPush(hasSpecial, special);
-  // The password is then generated and joined into a string.
+  
+  // newPassword array is created, populated, and joined into a string.
+  newPassword = [];
   generatePassword();
   password = newPassword.join("");
-  // Finally, the string is written to the page and newPassword is reset.
+  
+  // Finally, the string is written to the page.
   passwordText = document.querySelector("#password");
   passwordText.value = password;
-  newPassword.length = 0;
 }
 
 // Add event listener to generate button
