@@ -15,7 +15,6 @@ body,
 body {
   font-family: 'Courier New', Courier, monospace;
   background-color: #020204;
-  /* overflow: hidden; */
 }
 
 .wrapper {
@@ -35,6 +34,7 @@ header {
   background-color: #204829;
   border-radius: 70px;
   border-width: 1px;
+  /* monitor glow */
   box-shadow: #92e5a1 0px 0px 50px 0px, inset #020204 0px 0px 70px 5px;
   color: #22b455;
   font-size: 18px;
@@ -146,6 +146,7 @@ button[disabled] {
 
 }
 
+/*  */
 #box input {
   position: absolute;
   opacity: 0;
@@ -169,7 +170,6 @@ label {
   box-shadow: inset #204829 0px 0px 15px;
 }
 
-/* When the checkbox is checked, add a background */
 #box input:checked~.checkmark {
   background-color: #22b455;
 }
