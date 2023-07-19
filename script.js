@@ -16,12 +16,11 @@ var concatArray = [];
 var newPassword = [];
 
 
-// Checkbox & Slider Options
+// Checkbox Options
 var hasLower =    true;
 var hasUpper =    true;
 var hasNumber =   true;
 var hasSpecial =  true;
-var passwordLength = 8;
 
 
 // Return the status of each checkbox.
@@ -56,7 +55,7 @@ function hasOption(x, y) {
 // Populate New Password Array with 
 // random Concat Array indices.
 function generatePassword() {
-  for (i = 0; i < passwordLength; i++) {
+  for (i = 0; i < range.value; i++) {
     newPassword.push(concatArray[Math.floor(Math.random() * concatArray.length)]);
   }
 }
@@ -78,7 +77,7 @@ function writePassword() {
   hasOption(hasUpper, upperCase);
   hasOption(hasNumber, number);
   hasOption(hasSpecial, special);
-  passwordLength = range.value;
+  
   generatePassword();
   var password = newPassword.join("");
   var passwordText = document.querySelector("#password");
