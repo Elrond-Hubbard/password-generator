@@ -10,15 +10,12 @@ const upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
 const number =    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 const special =   ["!", "@", "#", "$", "%", "^", "&", "*", "_", "+"];
 
+const newPassword = []; // newPassword will contain the final generated password.
 
-// concatArray will hold all selected Source Arrays for the password.
-// newPassword will contain the final generated password.
-var concatArray = [];
-var newPassword = [];
 
-// Return the status of each checkbox.
+// Return the status of each checkbox option.
 function getCheck(optionBox) {
-  var checkBox = document.querySelector(optionBox);
+  checkBox = document.querySelector(optionBox);
   if (checkBox.checked) {
     return true;
   }
@@ -29,12 +26,12 @@ function getCheck(optionBox) {
 
 
 // Return the value of the range slider.
-range.addEventListener("input", updateRange)
 function updateRange() {
-  var range = document.querySelector("#range");
-  var rangeLabel = document.querySelector("#rangeLabel");
+  const range = document.querySelector("#range");
+  const rangeLabel = document.querySelector("#rangeLabel");
   rangeLabel.innerHTML = range.value;
 }
+range.addEventListener("input", updateRange)
 
 
 // Push selected checkbox options to Concat Array.
@@ -53,30 +50,26 @@ function generatePassword() {
   }
 }
 
+
 // This is the main password generation function.
-// First concatArray is emptied so it can be repopulated.
-// getCheck is called four times for each checkbox input.
-// concatPush is called to populate concatArray based on getCheck returns.
-// Password length is set using slider value.
-// The password is then generated and joined into a string.
-// Finally, newPassword is emptied so it can be repopulated.
 function writePassword() {
-  var hasLower = true;
-  var hasUpper = true;
-  var hasNumber = true;
-  var hasSpecial = true;
-  concatArray.length = 0;
-  hasLower = getCheck("#lowerbox");
+  // concatArray will hold all selected Source Arrays for the password.
+  concatArray = []; 
+  // getCheck is called to define checkbox states.
+  hasLower = getCheck("#lowerbox"); 
   hasUpper = getCheck("#upperbox");
   hasNumber = getCheck("#numberbox");
   hasSpecial = getCheck("#specialbox");
+  // concatPush is called to populate concatArray based on getCheck returns.
   concatPush(hasLower, lowerCase);
   concatPush(hasUpper, upperCase);
   concatPush(hasNumber, number);
   concatPush(hasSpecial, special);
+  // The password is then generated and joined into a string.
   generatePassword();
-  var password = newPassword.join("");
-  var passwordText = document.querySelector("#password");
+  password = newPassword.join("");
+  // Finally, the string is written to the page and newPassword is reset.
+  passwordText = document.querySelector("#password");
   passwordText.value = password;
   newPassword.length = 0;
 }
@@ -87,10 +80,3 @@ generateBtn.addEventListener("click", writePassword);
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-///// MATRIX RAIN EFFECT /////
-
-// const canvas = document.getElementById("canvas");
-// const context = canvas.getContext("2d");
-// canvas.width = window.innerWidth;
-// canvas.height = window.innerHeight * 0.4;
