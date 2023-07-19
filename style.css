@@ -15,6 +15,7 @@ body,
 body {
   font-family: 'Courier New', Courier, monospace;
   background-color: #020204;
+  /* overflow: hidden; */
 }
 
 .wrapper {
@@ -101,7 +102,7 @@ button[disabled] {
 }
 
 #password {
-  -webkit-appearance: none;
+  appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
@@ -168,18 +169,13 @@ label {
   box-shadow: inset #204829 0px 0px 15px;
 }
 
-/* On mouse-over, add a background color */
-#box:hover input~.checkmark {
-  background-color: #92e5a1;
-}
-
 /* When the checkbox is checked, add a background */
 #box input:checked~.checkmark {
   background-color: #22b455;
 }
 
 .slider {
-  -webkit-appearance: none;
+  appearance: none;
   width: 30%;
   height: 15px;
   border-radius: 5px;  
@@ -191,7 +187,6 @@ label {
 }
 
 .slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
   appearance: none;
   width: 25px;
   height: 25px;
@@ -207,6 +202,13 @@ label {
   border-radius: 5px;
   background: #22b455;
   cursor: pointer;
+}
+
+
+/* MATRIX RAIN EFFECT */
+canvas {
+  position:absolute;
+  bottom:0;
 }
 
 @media (max-width: 690px) {
