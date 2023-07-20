@@ -1,6 +1,6 @@
 # password-generator
 
-This [password](https://elrond-hubbard.github.io/password-generator/) generator can output a random password based on  
+[This password generator](https://elrond-hubbard.github.io/password-generator/) can output a random password based on  
 options selected by the user. The password can contain letters,  
 numbers, and special characters. It can contain up to 128 characters.  
 
