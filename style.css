@@ -34,13 +34,21 @@ header {
   background-color: #204829;
   border-radius: 70px;
   border-width: 1px;
-  /* monitor glow */
-  box-shadow: #92e5a1 0px 0px 50px 0px, inset #020204 0px 0px 70px 5px;
   color: #22b455;
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
+  animation-name: glow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+/* monitor glow effect */
+@keyframes glow {
+  0% {box-shadow: #92e5a1 0px 0px 50px 0px, inset #020204 0px 0px 70px 5px;}
+  50% {box-shadow: #92e5a1 0px 0px 50px 3px, inset #020204 0px 0px 70px 10px;}
+  100% {box-shadow: #92e5a1 0px 0px 50px 0px, inset #020204 0px 0px 70px 5px;}
 }
 
 .card-header::after {
@@ -52,7 +60,7 @@ header {
 }
 
 .card-body {
-  min-height: 100px
+  min-height: 100px;
 }
 
 .card-footer {
